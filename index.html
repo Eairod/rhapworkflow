@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhapsody Coin - Storytelling Interativo</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+    }
+    .step {
+      margin: 30px 0;
+      display: none;
+      transition: all 0.3s ease;
+    }
+    .step.active {
+      display: block;
+    }
+    .btn {
+      background-color: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 10px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>O Ecossistema Rhapsody</h1>
+
+  <div class="step active" id="step1">
+    <p>Você entra na plataforma MusicPlayce e começa a participar como fã ou curador, ouvindo composições, avaliando artistas e interagindo com audições.</p>
+    <button class="btn" onclick="nextStep(1)">Próximo</button>
+  </div>
+
+  <div class="step" id="step2">
+    <p>Sua atividade gera dados valiosos, que são processados pela inteligência da plataforma para calcular sua recompensa.</p>
+    <button class="btn" onclick="prevStep(2)">Voltar</button>
+    <button class="btn" onclick="nextStep(2)">Próximo</button>
+  </div>
+
+  <div class="step" id="step3">
+    <p>Esses dados te garantem MusicCash que são trocados por Rhapsody Coin e passam por um "boost/reforço" caso você possua NFTs do ecossistema. Quanto mais e melhores NFTs você tiver, maior será a sua recompensa em $RHAP.</p>
+    <button class="btn" onclick="prevStep(3)">Voltar</button>
+    <button class="btn" onclick="nextStep(3)">Próximo</button>
+  </div>
+
+  <div class="step" id="step4">
+    <p>Após validação e boost (caso tenha), você recebe tokens $RHAP na sua carteira. Agora, você está livre para escolher como usá-los.</p>
+    <button class="btn" onclick="prevStep(4)">Voltar</button>
+    <button class="btn" onclick="nextStep(4)">Próximo</button>
+  </div>
+
+  <div class="step" id="step5">
+    <p>Com seus $RHAP, você pode: vender em exchanges, participar do jogo NFT, fazer staking ou comprar itens no marketplace.</p>
+    <button class="btn" onclick="prevStep(5)">Voltar</button>
+    <button class="btn" onclick="nextStep(5)">Próximo</button>
+  </div>
+
+  <div class="step" id="step6">
+    <p>No jogo NFT, você usa $RHAP para adquirir novos NFTs, realizar fusões, evoluir personagens e acessar funções especiais.</p>
+    <button class="btn" onclick="prevStep(6)">Voltar</button>
+    <button class="btn" onclick="nextStep(6)">Próximo</button>
+  </div>
+
+  <div class="step" id="step7">
+    <p>Todos os $RHAP gastos no jogo retornam para a Tesouraria. Lá, o token pode ser queimado, redirecionado para liquidez ou redistribuído à comunidade.</p>
+    <button class="btn" onclick="prevStep(7)">Voltar</button>
+    <button class="btn" onclick="nextStep(7)">Próximo</button>
+  </div>
+
+  <div class="step" id="step8">
+    <p>Você agora faz parte de um ecossistema sustentável onde engajamento é recompensado, e cada ação contribui para fortalecer o universo Rhapsody.</p>
+    <p><strong>Fim do storytelling. Obrigado por participar!</strong></p>
+    <button class="btn" onclick="prevStep(8)">Voltar</button>
+    <button class="btn" onclick="goToStart()">Voltar ao Início</button>
+  </div>
+
+  <script>
+    function nextStep(current) {
+      document.getElementById(`step${current}`).classList.remove('active');
+      document.getElementById(`step${current + 1}`).classList.add('active');
+    }
+
+    function prevStep(current) {
+      document.getElementById(`step${current}`).classList.remove('active');
+      document.getElementById(`step${current - 1}`).classList.add('active');
+    }
+
+    function goToStart() {
+      for (let i = 1; i <= 8; i++) {
+        document.getElementById(`step${i}`).classList.remove('active');
+      }
+      document.getElementById('step1').classList.add('active');
+    }
+  </script>
+</body>
+</html>
